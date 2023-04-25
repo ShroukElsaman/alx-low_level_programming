@@ -1,50 +1,21 @@
 #include "main.h"
 
 /**
- * print_to_98 - Entry point
- * @n: starting point
- * Description: prints till 98
- * Return: no return
+ * print_to_98 - print n to 98 counts
+ * seprated by comma, followed
+ *by space and number should be 
+ * printed in order 
+ * @n: input 
  */
+
 void print_to_98(int n)
 {
-	int x, y[5], i, j;
-
-	if (n <= 98)
-		for (; n <= 98; n++)
-		{
-			if (n == 0)
-				_putchar('0');
-			if (n < 0)
-			{
-				_putchar('-');
-				x = n * -1;
-			}
-			else
-				x = n * 1;
-			for (i = 0; x; x /= 10, i++)
-				y[i] = x % 10;
-			for (j = i - 1; j >= 0; j--)
-				_putchar(y[j] + '0');
-			if (n != 98)
-			{
-				_putchar(',');
-				_putchar(' ');
-			}
-		}
-	else
-		for (; n >= 98; n--)
-		{
-			x = n * 1;
-			for (i = 0; x ; x /= 10, i++)
-				y[i] = x % 10;
-			for (j = i - 1; j >= 0; j--)
-				_putchar(y[j] + '0');
-			if (n != 98)
-			{
-				_putchar(',');
-				_putchar(' ');
-			}
-		}
-	_putchar('\n');
+int count;
+if (n > 98)
+for (count = n; count > 98; count--)
+	printf("%d, ", count);
+else 
+	for (count = n; count < 98; count++)
+		printf("%d, ", count);
+printf("98\n");
 }
