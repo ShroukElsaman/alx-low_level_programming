@@ -1,23 +1,25 @@
 #include "main.h"
 
 /**
- * leet - encodes a string into 1337
- * @s: string to encode
- *
- * Return: address of s
+ * leet - Entry point
+ * Description: to check if letter is uppercase
+ * @str: string
+ * Return: int
  */
-char *leet(char *s)
+char *leet(char *str)
 {
 	int i, j;
-	char a[] = "aAeEoOtTlL";
-	char b[] = "4433007711";
+	char letters[] = "AEOTLaeotl";
+	char numbers[] = "4307143071";
 
-	for (i = 0; *(s + i); i++)
+	for (i = 0; str[i]; i++)
 	{
-		for (j = 0; j <= 9; j++)
-		{
-			if (a[j] == s[i])
-				s[i] = b[j];
-		}
+		for (j = 0; letters[j]; j++)
+			if (str[i] == letters[j])
+			{
+				str[i] = numbers[j];
+				break;
+			}
 	}
-	return (s);}
+	return (str);
+}
